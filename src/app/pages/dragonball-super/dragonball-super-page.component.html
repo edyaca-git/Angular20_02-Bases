@@ -1,0 +1,19 @@
+<h1>DragonBall Pages</h1>
+<hr>
+
+<section class="row">
+    <div class="col-12 col-sm-6">
+        <!-- el componente hijo emite un evento con la nueva data del personaje, el padre lo recibe y 
+        ejecuta la función addCharacter que actualiza la señal de characters con el nuevo personaje agregado. -->
+        <dragonball-character-add 
+          (newCharacter)="dragonballService.addCharacter($event)"
+        />
+    </div>  
+    <!-- el componente padre envia la data del characters() al hijo -->
+    <div class="col-12 col-sm-6">
+        <dragonball-character-list 
+          listName="Listado de Personajes"
+        [characters]="dragonballService.characters()" />        
+    </div>
+
+</section>
